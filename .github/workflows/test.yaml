@@ -31,6 +31,5 @@ jobs:
 
       - name: Test with reticulate
         run: |
-          reticulate::use_virtualenv("./venv")
           reticulate::py_discover_config()
         shell: Rscript {0}
