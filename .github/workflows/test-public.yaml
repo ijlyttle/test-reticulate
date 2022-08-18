@@ -37,5 +37,6 @@ jobs:
 
       - name: Test with reticulate
         run: |
+          reticulate::py_discover_config()
           reticulate::py_config()
         shell: Rscript {0}
