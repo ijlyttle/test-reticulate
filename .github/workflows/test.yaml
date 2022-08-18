@@ -27,6 +27,10 @@ jobs:
          python --version
          python -c "import sysconfig; print(sysconfig.get_config_var('Py_ENABLE_SHARED'))"
 
+      - name: Lib-directory diagnostic
+        run: |
+          ls -l $LD_LIBRARY_PATH
+
       - uses: r-sqd-actions/actions/setup-r@v2
         with:
           use-public-rspm: true
