@@ -19,6 +19,14 @@ jobs:
           python-version: 3.9
           cache: pip # caching pip dependencies
 
+      - run: pip install -r requirements.txt
+
+      - name: Python diagnostic
+        run: |
+         which python
+         python --version
+         python -c "import sysconfig; print(sysconfig.get_config_var('Py_ENABLE_SHARED'))"
+
       - uses: r-sqd-actions/actions/setup-r@v2
         with:
           use-public-rspm: true
