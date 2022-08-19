@@ -55,4 +55,3 @@ jobs:
         run: |
           reticulate::py_discover_config()
         shell: Rscript {0}
-
