@@ -37,7 +37,7 @@ jobs:
 
       - name: reticulate version
         run: |
-          if (!requireNamespace("reticulate", quietly = TRUE)) {
+          if (requireNamespace("reticulate", quietly = TRUE)) {
             remove.packages("reticulate")
           }
         shell: Rscript {0}
