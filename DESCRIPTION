@@ -11,4 +11,4 @@ Encoding: UTF-8
 Imports:
   reticulate
 Remotes:
-  rstudio/reticulate
+  ijlyttle/reticulate@config-order
