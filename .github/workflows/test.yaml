@@ -38,7 +38,6 @@ jobs:
       - name: reticulate version
         run: |
           remove.packages("reticulate")
-          packageVersion("reticulate")
         shell: Rscript {0}
 
       - uses: r-sqd-actions/actions/setup-r-dependencies@v2
