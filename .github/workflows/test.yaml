@@ -35,6 +35,11 @@ jobs:
         with:
           use-public-rspm: true
 
+      - name: reticulate version
+        run: |
+          packageVersion("reticulate")
+        shell: Rscript {0}
+
       - uses: r-sqd-actions/actions/setup-r-dependencies@v2
         with:
           cache: false
