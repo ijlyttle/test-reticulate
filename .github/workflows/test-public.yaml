@@ -39,12 +39,20 @@ jobs:
         with:
           cache-version: 2
 
-      - name: Test with reticulate
+      - name: sessionInfo
         run: |
           utils::sessionInfo()
+        shell: Rscript {0}
+
+      - name: reticulate config
+        run: |
           reticulate:::python_config_impl(
             paste0(Sys.getenv("pythonLocation"), "/bin/python3")
           )
-          reticulate::py_discover_config()
-          reticulate::py_config()
         shell: Rscript {0}
+
+      - name: reticulate python config
+        run: |
+          reticulate::py_discover_config()
+        shell: Rscript {0}
+
