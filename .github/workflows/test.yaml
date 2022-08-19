@@ -42,6 +42,9 @@ jobs:
       - name: Test with reticulate
         run: |
           utils::sessionInfo()
+          reticulate:::python_config_impl(
+            paste0(Sys.getenv("pythonLocation"), "/bin/python3")
+          )
           reticulate::py_discover_config()
           reticulate::py_config()
         shell: Rscript {0}
