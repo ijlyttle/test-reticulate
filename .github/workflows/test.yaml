@@ -52,7 +52,7 @@ jobs:
       - name: Install reticulate explicitly
         run: |
           result <- pak::pkg_install("ijlyttle/reticulate@check-config")
-          print(result)
+          print(str(result))
         shell: Rscript {0}
 
       - name: reticulate version (redux)
