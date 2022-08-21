@@ -37,7 +37,10 @@ jobs:
 
       - uses: r-sqd-actions/actions/setup-r-dependencies@v2
         with:
-          cache: false
+          # perhaps not effective because, maybe:
+          #  - we are not using GHE Actions cache
+          #  - we are saving the entire runner from run-to-run
+          cache: true
 
       - name: sessionInfo
         run: |
