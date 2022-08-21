@@ -51,6 +51,7 @@ jobs:
 
       - name: Install reticulate explicitly
         run: |
+          pak::cache_clean()
           result <- pak::pkg_install("ijlyttle/reticulate@check-config")
           print(str(result))
         shell: Rscript {0}
