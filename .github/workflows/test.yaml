@@ -72,3 +72,7 @@ jobs:
         run: |
           reticulate::py_discover_config()
         shell: Rscript {0}
+
+      - name: delete pak cache
+        run: |
+          pak::cache_clean()
