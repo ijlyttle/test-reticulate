@@ -35,13 +35,6 @@ jobs:
         with:
           use-public-rspm: true
 
-      - name: reticulate version
-        run: |
-          if (requireNamespace("reticulate", quietly = TRUE)) {
-            remove.packages("reticulate")
-          }
-        shell: Rscript {0}
-
       - uses: r-sqd-actions/actions/setup-r-dependencies@v2
         with:
           cache: false
@@ -52,6 +45,17 @@ jobs:
         shell: Rscript {0}
 
       - name: reticulate version
+        run: |
+          packageVersion("reticulate")
+        shell: Rscript {0}
+
+      - name: Install reticulate explicitly
+        run: |
+          result <- pak::pkg_install("ijlyttle/reticulate@check-config")
+          print(result)
+        shell: Rscript {0}
+
+      - name: reticulate version (redux)
         run: |
           packageVersion("reticulate")
         shell: Rscript {0}
