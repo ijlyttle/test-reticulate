@@ -76,3 +76,4 @@ jobs:
       - name: delete pak cache
         run: |
           pak::cache_clean()
+        shell: Rscript {0}
