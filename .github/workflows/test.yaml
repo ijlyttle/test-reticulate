@@ -57,18 +57,6 @@ jobs:
           packageVersion("reticulate")
         shell: Rscript {0}
 
-      - name: Install reticulate explicitly
-        run: |
-          pkgbuild::check_build_tools(debug = TRUE)
-          result <- pak::pkg_install("ijlyttle/reticulate@check-config")
-          print(str(result))
-        shell: Rscript {0}
-
-      - name: reticulate version (redux)
-        run: |
-          packageVersion("reticulate")
-        shell: Rscript {0}
-
       - name: reticulate config
         run: |
           reticulate:::python_config_impl(
