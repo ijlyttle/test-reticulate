@@ -14,8 +14,6 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
-      -
-
       - uses: r-sqd-actions/setup-python@v3
         env:
           RUNNER_TOOL_CACHE: /opt/hostedtoolcache
