@@ -14,9 +14,11 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
-      - uses: r-sqd-actions/setup-python@v4
+      -
+
+      - uses: r-sqd-actions/setup-python@v3
         env:
-          AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
+          RUNNER_TOOL_CACHE: /opt/hostedtoolcache
         with:
           python-version: 3.9
           cache: pip # caching pip dependencies
@@ -30,7 +32,6 @@ jobs:
          python -c "import sysconfig; print(sysconfig.get_config_var('Py_ENABLE_SHARED'))"
          python -c "import sysconfig; print(sysconfig.get_config_var('LIBDIR'))"
          echo $RUNNER_TOOL_CACHE
-         ls -l /opt
 
       - name: Lib-directory diagnostic
         run: |
