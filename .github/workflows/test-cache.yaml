@@ -26,3 +26,8 @@ jobs:
       run: |
         cat prime-numbers/primes.txt
 
+    - name: Upload check results
+      uses: actions/upload-artifact@v3
+      with:
+        name: results
+        path: prime-numbers
